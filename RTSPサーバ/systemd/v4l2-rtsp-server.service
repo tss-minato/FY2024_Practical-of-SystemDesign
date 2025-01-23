@@ -1,0 +1,10 @@
+[Unit]
+Description=Exec v4l2rtpsserver service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/v4l2rtspserver
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
