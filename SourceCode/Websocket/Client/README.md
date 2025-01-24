@@ -33,5 +33,5 @@
 * Websocketインストール  
 
     ``` pip
-    > pip install websocket
+    > pip install websockets
     ```
