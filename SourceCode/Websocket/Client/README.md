@@ -35,3 +35,5 @@
     ``` pip
     > pip install websockets
     ```
+
+Clientフォルダ内のファイルおよびフォルダを一つ上の階層に移動する
