@@ -30,6 +30,12 @@
     > pip install websocket-server
     ```
 
+* pymongoインストール  
+
+    ``` pip
+    > pip install pymongo
+    ```
+
 * pytorchインストール  
     * CPU  
         
