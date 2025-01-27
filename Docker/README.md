@@ -1,4 +1,4 @@
-# Docker環境構築（Raspberry PI）
+# Docker環境構築
 
 * インストール
 
