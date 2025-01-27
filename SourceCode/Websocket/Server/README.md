@@ -48,3 +48,9 @@
     ``` pip
     > pip install ultralytics
     ```
+
+* ImportError: libGL.so.1: cannot open shared object file の対策
+
+    ``` bash
+    > apt -y install libopencv-dev
+    ```
