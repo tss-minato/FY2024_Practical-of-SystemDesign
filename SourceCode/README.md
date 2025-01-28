@@ -23,7 +23,7 @@
    ``` bash
    > python3.xx --version
    ```    
-> [!CAUTION]
+> [!NOTE]
 > 以下の通りにコマンド実行を行うと、デフォルトバージョンのPythonで実行される
 > ``` bash
 > > python3 --version
