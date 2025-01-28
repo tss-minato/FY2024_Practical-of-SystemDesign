@@ -9,7 +9,7 @@ WebSocketサーバで使用するパッケージは、一括でインストー�
 > pip install -r 02_requirements.txt
 ```
 
-> [!CAUTION]
+> [!NOTE]
 > プログラム実行時、「ImportError: libGL.so.1: cannot open shared object file」が発生した場合、以下のライブラリをインストール
 >
 > ``` bash
