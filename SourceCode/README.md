@@ -72,9 +72,9 @@ pipは、Pythonのパッケージ管理システムである
         > break-system-packages = true
 * パッケージ一括インストール
 パッケージを一括でインストールを行うファイル(ex. requirements.txt )が用意されている場合は、以下のコマンドを実行するとまとめてパッケージインストールできる
-``` bash
-> pip install -r requirements.txt
-```
+   ``` bash
+   > pip install -r requirements.txt
+   ```
 
 
 ## Angulr
