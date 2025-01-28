@@ -1,39 +1,19 @@
 # Websocketクライアント環境構築
+Clientフォルダ内のファイルおよびフォルダを一つ上の階層に移動する  
 
-* pipインストール  
-
-    ``` bash
-    > sudo apt -y install python3-pip
-    ```  
-
-* pip設定(PEP 686対策)  
-
-    ``` bash
-    > mkdir ~/.pip  
-    > vi ~/.pip/pip.conf
-    ```
-
-    * 設定内容（pip.conf）  
-  
-        > [global]  
-        > break-system-packages = true
+WebSocketクライアントで使用するパッケージは、一括でインストールを行うファイルがあるので、以下のコマンドを実行すること
+なお、個々でインストールが行えるようにインストールコマンドについても記載を行う
+> [!CAUTION]
+> プログラム実行時、openCV関連ライブラリに関するエラーが発生が発生した場合、以下のライブラリをインストール
+> ``` bash
+> > sudo apt -y install libopencv-dev
+> ```
 
 * openCVインストール  
-
     ``` pip
     > pip install opencv-python
     ```
-
-* openCV関連ライブラリのインストール
-
-    ``` bash
-    > sudo apt -y install libopencv-dev
-    ```
-
 * Websocketインストール  
-
     ``` pip
     > pip install websockets
     ```
-
-Clientフォルダ内のファイルおよびフォルダを一つ上の階層に移動する
