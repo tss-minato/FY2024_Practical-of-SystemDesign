@@ -20,15 +20,30 @@
 
 * openCVインストール  
 
-      ``` pip
-      > pip install opencv-python
-      ```
+    ``` pip
+    > pip install opencv-python
+    ```
 
 * Websocket Serverインストール  
 
     ``` pip
     > pip install websocket-server
     ```
+
+    * 実行するとエラーが発生するので、該当箇所を以下の通りに変更
+
+        lib/python3.12/site-packages/websocket_server/websocket_server.py: 341行目
+
+        ``` python
+        opcode_handler(self, message_bytes.decode('utf8'))
+        ```
+        ↓
+        ``` python
+        try:
+            opcode_handler(self, message_bytes.decode('utf8'))
+        except:
+            pass
+        ```
 
 * pymongoインストール  
 
