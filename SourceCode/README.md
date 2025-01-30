@@ -97,3 +97,13 @@ Ubuntuのパッケージソフトのnode.JSおよびnode.jsのパッケージ管
     > sudo apt purge -y nodejs npm
     > sudo apt autoremove -y
     ```
+
+### 2.2. Angulrのインストール
+   ``` bash
+   > npm install -g @angular/cli
+   ```
+
+### 2.3. NestJSのインストール
+   ``` bash
+   > npm install -g @nestjs/cli
+   ```
