@@ -100,10 +100,10 @@ Ubuntuのパッケージソフトのnode.JSおよびnode.jsのパッケージ管
 
 ### 2.2. Angulrのインストール
    ``` bash
-   > npm install -g @angular/cli
+   > sudo npm install -g @angular/cli
    ```
 
 ### 2.3. NestJSのインストール
    ``` bash
-   > npm install -g @nestjs/cli
+   > sudo npm install -g @nestjs/cli
    ```
