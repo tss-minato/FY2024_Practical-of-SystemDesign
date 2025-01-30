@@ -72,9 +72,28 @@ pipは、Pythonのパッケージ管理システムである
         > break-system-packages = true
 * パッケージ一括インストール
 パッケージを一括でインストールを行うファイル(ex. requirements.txt )が用意されている場合は、以下のコマンドを実行するとまとめてパッケージインストールできる
-   ``` bash
-   > pip install -r requirements.txt
-   ```
+    ``` bash
+    > pip install -r requirements.txt
+    ```
 
 
-## Angulr
+## 2. node.js
+### 2.1. node.jsのインストール
+Ubuntuのパッケージソフトのnode.JSおよびnode.jsのパッケージ管理システムのnpmのバージョンが最新ではないため、以下のコマンドでインストールを行う
+* 現行バージョンをインストール
+    ``` bash
+    > sudo apt install -y nodejs npm
+    ```
+* nをインストール（バージョン管理）
+    ``` bash
+    > sudo npm install n -g
+    ```
+* 最新のnode.jsとnpmをインストール
+    ``` bash
+    > sudo n stable
+    ```
+* 最初にインストールしたものをアンインストール
+    ``` bash
+    > sudo apt purge -y nodejs npm
+    > sudo apt autoremove -y
+    ```
