@@ -47,3 +47,19 @@
      ``` bash
      > sudo apt -y install nginx
      ```
+* **/etc/nginx/conf.d/** に以下の内容のconfファイルを作成
+    ``` bash
+    > sudo vi /etc/nginx/conf.d/99-config-conf
+    ```
+    ```
+    server {
+        location / {
+            root /var/www/html;
+        }
+    }
+    types {
+        application/vnd.apple.mpegurl m3u8;
+        video/mp2t ts;
+        text/html html;
+    }
+    ```
