@@ -27,7 +27,7 @@
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
           <div class="buttons">
-            <button mat-flat-button color="accent" [disabled]="!element.isConnected" (click)="openImageViewDialog(element.id, element.name, element.isMasking)">
+            <button mat-flat-button color="accent" (click)="openImageViewDialog(element.id, element.name, element.isMasking)">
               画像表示
             </button>
             <button mat-flat-button color="primary" (click)="openSettingCameraDialog(element.id, element.name, element.isMasking)">

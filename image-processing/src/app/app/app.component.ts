@@ -142,7 +142,7 @@ export class AppComponent implements OnInit {
         msg => {
           let jsonData = JSON.parse(msg)
           //console.log(jsonData)
-
+          
           // 伝送種別が「接続」の場合
           if (jsonData['transmissionType'] == this.CONECT) {
             jsonData['message'] = '';
@@ -173,23 +173,10 @@ export class AppComponent implements OnInit {
                 this.websocketService.ImageData = img.src
                 //console.log( this.imageData)
             }
-          } else if (jsonData['transmissionType'] == 0x10) {
-            console.log(jsonData)
 
-            const dialogRef = this.dialog.open(RegistCameraDialogComponent, {
-              data: {
-                settingMode: 'Regist',
-                jsonData: jsonData,
-                subject: this.subject$,
-              }
-            });
-        
-            dialogRef.afterClosed().subscribe(result =>{
-              console.log('cloce dialog')
-            })
-          // 伝送種別が「カメラ登録情報要求」の場合
+          // 伝送種別が「カメラ情報」の場合
           } else if (jsonData['transmissionType'] == this.CAMERA_INFO) {
-            console.log(jsonData)
+            // console.log(jsonData)
             this.cameraList = new MatTableDataSource<any>([]);
             
             for (let index in jsonData['cameraInfo']) {
@@ -201,25 +188,20 @@ export class AppComponent implements OnInit {
                 capacity: jsonData['cameraInfo'][index]['capacity'], 
                 count: jsonData['cameraInfo'][index]['count'], 
                 weight: weight,
-                isMasking: jsonData['cameraInfo'][index]['maskingFlag'],
-                isConnected: jsonData['cameraInfo'][index]['isConnected']
+                isMasking: jsonData['cameraInfo'][index]['maskingFlag']
               })
             }
 
             this.cameraList.paginator = this.paginator;
-          } else if (jsonData['transmissionType'] == 0x20) {
-            
-            let resultMsg = jsonData["result"] ? "カメラの登録を行いました。" : "カメラの登録が失敗しました。" 
-            alert(resultMsg) 
           } else if (jsonData['transmissionType'] == 0x21) {
             console.log(jsonData)
             
             let resultMsg = jsonData["result"] ? "設定変更を行いました。" : "設定変更に失敗しました。" 
             alert(resultMsg)            
-          }else if (jsonData['transmissionType'] == 0x25) {
+          }else if (jsonData['transmissionType'] == 0x21) {
             console.log(jsonData)
             
-            let resultMsg = jsonData["result"] ? "カメラの登録を解除しました。" : "カメラの登録解除に失敗しました。" 
+            let resultMsg = jsonData["result"] ? "削除されました" : "削除されませんでした" 
             alert(resultMsg)   
           }
         },
@@ -267,9 +249,16 @@ export class AppComponent implements OnInit {
    * カメラ登録
    */
   openRegistCameraDialog(): void {
-    this.subject$.next(JSON.stringify({
-      "transmissionType": 0x10
-    }));
+    const dialogRef = this.dialog.open(RegistCameraDialogComponent, {
+      data: {
+        settingMode: 'Regist',
+        subject: this.subject$,
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result =>{
+      console.log('cloce dialog')
+    })
   }
 
   /**
