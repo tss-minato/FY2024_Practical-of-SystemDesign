@@ -46,7 +46,7 @@ class WebsocketServerProcessing(Logger):
         self.conf = read_file('./Server/serverConfig.json')
 
         # ネットワーク内に接続している機器の死活チェック
-        subprocess.run('./Common/NetworkAliveCheck.sh', stdout=subprocess.DEVNULL)
+        subprocess.run('./NetworkAliveCheck.sh', stdout=subprocess.DEVNULL)
 
         # IPアドレスを取得
         sp_ip = subprocess.Popen(['ip', '-4', 'addr', 'show', 'dev', self.conf['websocket']['interface']], encoding='utf-8', stdout=subprocess.PIPE)

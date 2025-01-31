@@ -36,7 +36,7 @@ class Client(Logger):
         conf = read_file('./Client/clientConfig.json')
 
         # ネットワーク内に接続している機器の死活チェック
-        subprocess.run('./Common/NetworkAliveCheck.sh', stdout=subprocess.DEVNULL)
+        subprocess.run('./NetworkAliveCheck.sh', stdout=subprocess.DEVNULL)
 
         # 同一ネットワーク内のarp情報を取得
         sp_arp = subprocess.Popen(['arp', '-a'], encoding='utf-8', stdout=subprocess.PIPE)
