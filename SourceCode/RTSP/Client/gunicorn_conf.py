@@ -6,7 +6,7 @@ def main():
     chdir = '/home/tss_1171240/Repository/Python/RTSP/Client'
     
     # Socket Path
-    bind = 'localhost:8000'
+    bind = 'localhost:58000'
     
     # Worker Options
     workers = cpu_count() + 1
