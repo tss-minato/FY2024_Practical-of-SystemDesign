@@ -101,7 +101,7 @@ class WebsocketServerTransmissionProcessing(WebsocketServerProcessing):
         while True:
             for cameraClient in self.clients[CAMERA]:
                 # 画像ファイルが0枚の場合はスキップ
-                if cameraClient['image_path'] == 0:
+                if len(cameraClient['image_path']) == 0:
                     continue
 
                 # 最新の画像パスの要素番号を取得
