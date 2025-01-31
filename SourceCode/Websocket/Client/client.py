@@ -14,11 +14,11 @@ import socket
 import sys
 
 sys.path.append(os.path.join(os.getcwd(), 'Common'))
-from Common.common import read_file
-from Common.logger import Logger
-from Common.Constant.common import MAX_DIVISION_NUMBER
-from Common.Constant.transmission_type import CONECT, STREAMING
-from Common.Constant.client_type import CAMERA
+from common import read_file
+from logger import Logger
+from Constant.common import MAX_DIVISION_NUMBER
+from Constant.transmission_type import CONECT, STREAMING
+from Constant.client_type import CAMERA
 
 class Client(Logger):
     ''' Websocketクライアントクラス '''
