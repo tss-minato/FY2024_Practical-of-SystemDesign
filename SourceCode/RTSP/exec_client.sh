@@ -1,9 +1,7 @@
 #!/usr/bin/bash
 
-venvPath='../venv/vxx_yyyymmdd/bin/activate'
+venvPath='../venv/v11_20250131/bin/activate'
 
 source $venvPath
-cd ./Client
-gunicorn -c ./gunicorn_conf.py main:app
-cd ../
+python ./Client/main.py
 deactivate
