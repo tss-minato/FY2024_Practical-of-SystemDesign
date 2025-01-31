@@ -15,10 +15,10 @@ from database_operation import DatabaseOperation
 
 from Constant.models import SEGMENTATION
 
-sys.path.append('../')
-from Common.Constant.common import MAX_DIVISION_NUMBER
-from Common.Constant.transmission_type import CONECT, STREAMING, CAMERA_CONNECTION_INFO, CAMERA_REGISTRATION_INFO, CAMERA_REGISTERATION, CHANGE_CAMERA_SETTINGS, CAMERA_DELETE 
-from Common.Constant.client_type import CAMERA, VIEWER
+sys.path.append('./Common')
+from Constant.common import MAX_DIVISION_NUMBER
+from Constant.transmission_type import CONECT, STREAMING, CAMERA_CONNECTION_INFO, CAMERA_REGISTRATION_INFO, CAMERA_REGISTERATION, CHANGE_CAMERA_SETTINGS, CAMERA_DELETE 
+from Constant.client_type import CAMERA, VIEWER
 
 class WebsocketServerTransmissionProcessing(WebsocketServerProcessing):
     ''' Websocketサーバ伝送処理クラス '''
