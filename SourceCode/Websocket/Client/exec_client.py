@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from client import Client
-from logging import DEBUG, INFO
 import asyncio
 import time
+import sys
+
+from logging import DEBUG, INFO
+
+from client import Client
 
 LOGGER_LEVEL = DEBUG if __debug__ else INFO
 RECONECT_SEC = 5

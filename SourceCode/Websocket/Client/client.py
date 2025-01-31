@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from Common.common import read_file
-from Common.logger import Logger
-from Common.Constant.common import MAX_DIVISION_NUMBER
-from Common.Constant.transmission_type import CONECT, STREAMING
-from Common.Constant.client_type import CAMERA
-
 import websockets
 import cv2
 import json
@@ -15,7 +9,15 @@ import math
 import subprocess
 import re
 import datetime
-import socket  
+import socket
+import sys
+
+sys.path.append('../')
+from Common.common import read_file
+from Common.logger import Logger
+from Common.Constant.common import MAX_DIVISION_NUMBER
+from Common.Constant.transmission_type import CONECT, STREAMING
+from Common.Constant.client_type import CAMERA
 
 class Client(Logger):
     ''' Websocketクライアントクラス '''

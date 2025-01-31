@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 
-from Common.common import delete_directory, read_file
-from Common.logger import Logger
-
-
-from Common.Constant.client_type import CAMERA, VIEWER
-from Common.Constant.transmission_type import CONECT
-
-from websocket_server import WebsocketServer
-
 import json
 import re
 import os
 import shutil
 import subprocess
+import sys
+
+from websocket_server import WebsocketServer
+
+sys.path.append('../')
+from Common.common import delete_directory, read_file
+from Common.logger import Logger
+from Common.Constant.client_type import CAMERA, VIEWER
+from Common.Constant.transmission_type import CONECT
 
 class WebsocketServerProcessing(Logger):
     '''Websocketサーバ処理クラス'''
