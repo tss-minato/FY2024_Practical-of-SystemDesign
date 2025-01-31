@@ -36,6 +36,25 @@
 > > sudo systemctl enable v4l2rtspserver.service
 > ```
 
+## 1.2. nginx
+* nginxインストール
+     ``` bash
+     > sudo apt -y install nginx
+     ```
+* **/etc/nginx/conf.d/** に以下の内容のconfファイルを作成
+    ``` bash
+    > sudo vi /etc/nginx/conf.d/99-config-conf
+    ```
+    ```
+    server {
+         root /home/tss_1171240/Repository/Python/RTSP;
+         location / {
+              proxy_pass http://localhost:8000; 
+        }
+    }
+    ```
+
+
 # 2. サーバ環境構築
 ## 2.1. ffmpeg
 * ffmpegインストール
