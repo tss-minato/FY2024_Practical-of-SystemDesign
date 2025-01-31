@@ -12,4 +12,4 @@ worker_class = 'uvicorn.workers.UvicornWorker'
 # Logging Options
 loglevel = 'info'
 accesslog = '~/Repository/Python/RTSP/access_log'
-errorlog = '~/Repository/Python/RTSP/error_log
+errorlog = '~/Repository/Python/RTSP/error_log'
