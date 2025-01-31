@@ -1,6 +1,6 @@
 from multiprocessing import cpu_count
 
-chdir = '~/Repository/Python/RTSP/Client'
+chdir = '/home/tss_1171240/Repository/Python/RTSP/Client'
 
 # Socket Path
 bind = 'localhost:8000'
