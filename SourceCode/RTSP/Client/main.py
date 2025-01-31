@@ -1,5 +1,5 @@
 import socket
-import subprocess
+import uvicorn
 
 from fastapi import FastAPI
 
@@ -14,3 +14,6 @@ def device_info():
     return {
         'hostname': socket.gethostname()
     }
+
+if __name__ == '__main__':
+    uvicorn.run(app, host='0.0.0.0', port=8000)
