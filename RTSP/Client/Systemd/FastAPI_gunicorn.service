@@ -1,0 +1,12 @@
+[Unit]
+Description=Gunicorn Daemon for FastAPI Application
+After=network.target
+
+[Service]
+User=tss_1171240
+Group=tss_1171240
+WorkingDirectory=/home/tss_1171240/Repository/Python/RTSP/Client
+ExecStart=/home/tss_1171240/Repository/Python/RTSP/Client/exec_client.sh 
+
+[Install]
+WantedBy=multi-user.target
