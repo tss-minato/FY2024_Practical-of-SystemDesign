@@ -9,10 +9,11 @@ import math
 import subprocess
 import re
 import datetime
+import os
 import socket
 import sys
 
-sys.path.append('../')
+sys.path.append(os.path.join(os.getcwd(), 'Common'))
 from Common.common import read_file
 from Common.logger import Logger
 from Common.Constant.common import MAX_DIVISION_NUMBER
@@ -33,10 +34,10 @@ class Client(Logger):
         ''' 初期化処理 '''
 
         # 設定ファイルを読み込み
-        conf = read_file('clientConfig.json')
+        conf = read_file('./Client/clientConfig.json')
 
         # ネットワーク内に接続している機器の死活チェック
-        subprocess.run('../Common/NetworkAliveCheck.sh', stdout=subprocess.DEVNULL)
+        subprocess.run('./Common/NetworkAliveCheck.sh', stdout=subprocess.DEVNULL)
 
         # 同一ネットワーク内のarp情報を取得
         sp_arp = subprocess.Popen(['arp', '-a'], encoding='utf-8', stdout=subprocess.PIPE)
