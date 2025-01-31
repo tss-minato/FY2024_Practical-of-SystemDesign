@@ -9,7 +9,6 @@ import math
 import subprocess
 import re
 import datetime
-import os
 import socket
 import sys
 
