@@ -6,7 +6,7 @@ After=network.target
 User=tss_1171240
 Group=tss_1171240
 WorkingDirectory=/home/tss_1171240/Repository/Python/RTSP
-ExecStart=./exec_client.sh
+ExecStart=/home/tss_1171240/Repository/Python/RTSP/exec_client.sh
 
 [Install]
 WantedBy=multi-user.target
