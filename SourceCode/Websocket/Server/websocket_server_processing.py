@@ -9,11 +9,11 @@ import sys
 
 from websocket_server import WebsocketServer
 
-sys.path.append('../')
-from Common.common import delete_directory, read_file
-from Common.logger import Logger
-from Common.Constant.client_type import CAMERA, VIEWER
-from Common.Constant.transmission_type import CONECT
+sys.path.append('./Common')
+from common import delete_directory, read_file
+from logger import Logger
+from Constant.client_type import CAMERA, VIEWER
+from Constant.transmission_type import CONECT
 
 class WebsocketServerProcessing(Logger):
     '''Websocketサーバ処理クラス'''
@@ -43,7 +43,7 @@ class WebsocketServerProcessing(Logger):
         ''' 初期化処理 '''
 
         # 設定ファイル読み込み
-        self.conf = read_file('serverConfig.json')
+        self.conf = read_file('./Server/serverConfig.json')
 
         # ネットワーク内に接続している機器の死活チェック
         subprocess.run('./Common/NetworkAliveCheck.sh', stdout=subprocess.DEVNULL)
