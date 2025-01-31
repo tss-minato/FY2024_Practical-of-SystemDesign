@@ -3,5 +3,5 @@
 venvPath='../venv/vxx_yyyymmdd/bin/activate'
 
 source $venvPath
-python ./client/exec_client.py
+python ./Client/exec_client.py
 deactivate
