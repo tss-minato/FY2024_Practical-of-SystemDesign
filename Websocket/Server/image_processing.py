@@ -75,7 +75,7 @@ class ImageProcessing():
             self.before_frame = None
 
             model = self.models[model]
-            results = model.predict(img, save=True, conf=0.5, show_conf=False, show_boxes=False, classes=[0])
+            results = model.predict(img, save=True, conf=0.5, show_conf=False, show_boxes=False, classes=[0, 62])
             
             file_path = os.path.join(results[0].save_dir, results[0].path)
         
