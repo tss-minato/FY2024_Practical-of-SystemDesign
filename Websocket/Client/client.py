@@ -74,6 +74,9 @@ class Client(Logger):
         while True:
             result, frame = self.capture.read()
 
+            if not result:
+                continue
+
             json_data = {
                 'id': self.id,
                 'transmissionType': STREAMING,
@@ -84,12 +87,6 @@ class Client(Logger):
                 'endPoint': False,
                 'data': ''
             }
-
-            if not result:
-                json_data['endPoint'] = True
-                await websocket.send(json.dumps(json_data))
-                return
-
                         
             frame = cv2.resize(frame, None, fx = 0.5, fy = 0.5)
             frame = cv2.putText(frame, datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S'), (0, 15), cv2.FONT_HERSHEY_PLAIN, 1, (0, 255, 255), 1, cv2.LINE_AA)
