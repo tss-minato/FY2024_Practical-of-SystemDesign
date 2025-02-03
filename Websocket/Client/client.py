@@ -52,7 +52,6 @@ class Client(Logger):
         self.url = f'ws://{ ip_addr }:{ conf["port"] }'
         self.capacity = conf['capacity']
         self.capture = cv2.VideoCapture(conf['camera'])
-        self.capture.open()
 
         self.id = -1
 
