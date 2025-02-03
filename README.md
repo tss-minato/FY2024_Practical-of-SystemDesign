@@ -38,7 +38,8 @@
     ``` bash
     > sudo apt -y install git
     > sudo apt -y install cmake
-    > sudo apt -y install liblivemedia-dev 
+    > sudo apt -y install liblivemedia-dev
+      ※ Ubuntu Serverの場合、3つ目のモジュールがないのでインストール不要
     ```
 
 * コンパイル及びインストール
