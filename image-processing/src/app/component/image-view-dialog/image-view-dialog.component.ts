@@ -1,4 +1,5 @@
-import { Component, Inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Inject  } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -8,6 +9,7 @@ import { AppComponent } from '../../app.component';
   selector: 'app-image-view-dialog',
   standalone: true,
   imports: [
+    CommonModule,
     MatButtonModule,
     MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose,
     MatSlideToggleModule,
@@ -28,7 +30,7 @@ export class ImageViewDialogComponent {
     this.canvas.height = 240;
     
     this.timerCallback();
-
+    console.log(this.data.isWebsocket)
   }
 
   timerCallback(): void{

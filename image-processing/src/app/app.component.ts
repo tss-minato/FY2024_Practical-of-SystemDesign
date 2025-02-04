@@ -93,7 +93,7 @@ export class AppComponent implements OnInit {
   @ViewChild('paginator') paginator!: MatPaginator;
 
   ngOnInit(): void {
-    this.host = '192.168.130.17';
+    this.host = 'localhost';
     this.port = '54321'
     this.buttonName = 'Websocket接続開始';
     this.isConnect = false;
@@ -105,7 +105,6 @@ export class AppComponent implements OnInit {
       this.doLoad();
     });
   }
-
 
   doLoad(): void {
     this.canvas = document.getElementById("canvas") as HTMLCanvasElement;
@@ -141,7 +140,7 @@ export class AppComponent implements OnInit {
       this.subject$.subscribe(
         msg => {
           let jsonData = JSON.parse(msg)
-          //console.log(jsonData)
+          console.log(jsonData)
 
           // 伝送種別が「接続」の場合
           if (jsonData['transmissionType'] == this.CONECT) {
@@ -189,7 +188,7 @@ export class AppComponent implements OnInit {
             })
           // 伝送種別が「カメラ登録情報要求」の場合
           } else if (jsonData['transmissionType'] == this.CAMERA_INFO) {
-            console.log(jsonData)
+            // console.log(jsonData)
             this.cameraList = new MatTableDataSource<any>([]);
             
             for (let index in jsonData['cameraInfo']) {
@@ -267,9 +266,9 @@ export class AppComponent implements OnInit {
    * カメラ登録
    */
   openRegistCameraDialog(): void {
-    this.subject$.next(JSON.stringify({
-      "transmissionType": 0x10
-    }));
+    // this.subject$.next(JSON.stringify({
+    //   "transmissionType": 0x10
+    // }));
   }
 
   /**
@@ -278,13 +277,14 @@ export class AppComponent implements OnInit {
    * @param {string} name カメラ名
    * @param {boolean} isMasking マスキングフラグ
    */
-  openImageViewDialog(id: number , name: string, isMasking: boolean): void {
+  openImageViewDialog(id: number , name: string, isMasking: boolean, isWebsocket: boolean): void {
     const dialogRef = this.dialog.open(ImageViewDialogComponent, {
       data: {
         service: this.websocketService,
         id: id,
         name: name,
         isMasking: isMasking,
+        isWebsocket: isWebsocket,
         subject: this.subject$,
       }
     })
